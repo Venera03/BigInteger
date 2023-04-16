@@ -1,8 +1,13 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.0)
+
 project(MyProject)
 
-set(CMAKE_CXX_STANDARD 11)
+add_library(BigInteger BigInteger.cpp)
 
-add_executable(MyProject main.cpp)
+add_executable(MyProgram main.cpp)
 
-set_target_properties(MyProject PROPERTIES LINK_FLAGS "/SUBSYSTEM:CONSOLE")
+target_link_libraries(MyProgram BigInteger)
+
+add_executable(TestBigInteger test_biginteger.cpp)
+
+target_link_libraries(TestBigInteger BigInteger)

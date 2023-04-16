@@ -34,6 +34,7 @@ BigInteger::BigInteger(std::string num_str)
     }
 }
 
+
 std::string BigInteger::toString() const
 {
     std::string result = "";
@@ -41,7 +42,14 @@ std::string BigInteger::toString() const
     {
         result += std::to_string(digits[i]);
     }
+    int index = 0;
+    while (index < result.size() && result[index] == '0') {
+        index++;
+    }
+    if (result.size()==1)
     return result;
+     return result.substr(index);
+
 }
 
  BigInteger BigInteger::operator=(const BigInteger &other)
