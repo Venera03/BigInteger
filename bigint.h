@@ -14,6 +14,10 @@ public:
     BigInteger(std::string num_str);
     std::string toString() const;
     BigInteger operator=(const BigInteger &other);
+    BigInteger& operator++();
+    BigInteger operator++(int);
+    BigInteger& operator--();
+    BigInteger operator--(int);
     BigInteger& operator-= (const BigInteger &other);
     BigInteger& operator+= (const BigInteger &other);
     BigInteger operator+(const BigInteger& other) const;

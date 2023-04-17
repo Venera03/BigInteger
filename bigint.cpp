@@ -52,6 +52,28 @@ std::string BigInteger::toString() const
 
 }
 
+ BigInteger &BigInteger::operator++(){
+   *this+=1;
+   return *this;
+}
+ BigInteger &BigInteger::operator--(){
+    *this-=1;
+    return *this;
+ }
+ BigInteger BigInteger::operator++(int) {
+    BigInteger temp = *this;
+    *this += 1;
+
+    return temp;
+}
+
+BigInteger BigInteger::operator--(int) {
+    BigInteger temp = *this;
+    *this -= 1;
+
+    return temp;
+}
+
  BigInteger BigInteger::operator=(const BigInteger &other)
     {
         digits = other.digits;
